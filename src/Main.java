@@ -22,22 +22,33 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             System.out.println("che tipo di file vuoi creare? scegli da 1 o video per video, 2 o audio per audio, 3 o" +
                     " immagine per immagine oppure qualsiasi altra cosa per uscire");
-            int scanner = new Scanner(System.in).nextInt();
+            Scanner input = new Scanner(System.in);
+            int scanner = input.nextInt();
+            input.close();
             if (scanner == 1){
                 System.out.println("Titolo?");
-                String title = new Scanner(System.in).next();
+                Scanner ins = new Scanner(System.in);
+                String title = ins.next();
+                ins.close();
                 System.out.println("Durata?");
-                int durata = new Scanner(System.in).nextInt();
+                Scanner time = new Scanner(System.in);
+                int durata = time.nextInt();
+                time.close();
                 arr[i] = new Video(title, durata);
             } else if (scanner == 2) {
                 System.out.println("Titolo?");
-                String title = new Scanner(System.in).next();
+                Scanner ins = new Scanner(System.in);
+                String title = ins.next();
+                ins.close();
                 System.out.println("Durata?");
-                int durata = new Scanner(System.in).nextInt();
+                Scanner time = new Scanner(System.in);
+                int durata = time.nextInt();
+                time.close();
                 arr[i] = new Audio(title, durata);
             } else if (scanner == 3) {
-                System.out.println("Titolo?");
-                String title = new Scanner(System.in).next();
+                Scanner ins = new Scanner(System.in);
+                String title = ins.next();
+                ins.close();
                 arr[i] = new Immagine(title);
             }else {break;}
 
@@ -49,7 +60,9 @@ public class Main {
         while (loop){
             System.out.println("Cosa vuoi riprodurre? Scegli numeri da 1 a 5 per la selezionare la posizione " +
                     "qualsiasi altro numero terminerà il processo!");
-            int selection = new Scanner(System.in).nextInt();
+            Scanner input = new Scanner(System.in);
+            int selection = input.nextInt();
+            input.close();
             switch (selection){
                 case 1:
                     if (arr[1] instanceof Immagine){
@@ -100,6 +113,7 @@ public class Main {
                     loop = false;
                     break;
             }}
+
 
 
 
