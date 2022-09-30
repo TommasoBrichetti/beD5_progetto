@@ -24,33 +24,29 @@ public class Main {
                     " immagine per immagine oppure qualsiasi altra cosa per uscire");
             Scanner input = new Scanner(System.in);
             int scanner = input.nextInt();
-            input.close();
             if (scanner == 1){
                 System.out.println("Titolo?");
                 Scanner ins = new Scanner(System.in);
                 String title = ins.next();
-                ins.close();
                 System.out.println("Durata?");
                 Scanner time = new Scanner(System.in);
                 int durata = time.nextInt();
-                time.close();
                 arr[i] = new Video(title, durata);
             } else if (scanner == 2) {
                 System.out.println("Titolo?");
                 Scanner ins = new Scanner(System.in);
                 String title = ins.next();
-                ins.close();
                 System.out.println("Durata?");
                 Scanner time = new Scanner(System.in);
                 int durata = time.nextInt();
-                time.close();
                 arr[i] = new Audio(title, durata);
             } else if (scanner == 3) {
+                System.out.println("Titolo?");
                 Scanner ins = new Scanner(System.in);
                 String title = ins.next();
-                ins.close();
                 arr[i] = new Immagine(title);
-            }else {break;}
+            }
+
 
 
 
@@ -62,7 +58,6 @@ public class Main {
                     "qualsiasi altro numero terminerà il processo!");
             Scanner input = new Scanner(System.in);
             int selection = input.nextInt();
-            input.close();
             switch (selection){
                 case 1:
                     if (arr[1] instanceof Immagine){
