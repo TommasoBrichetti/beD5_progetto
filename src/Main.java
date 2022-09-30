@@ -18,45 +18,36 @@ public class Main {
 //        dumbo.play();
 //        wow.show();
         PlayerMultimediale[] arr = new PlayerMultimediale[5];
+        Scanner input = new Scanner(System.in);
 
         for (int i = 0; i < 5; i++) {
             System.out.println("che tipo di file vuoi creare? scegli da 1 o video per video, 2 o audio per audio, 3 o" +
                     " immagine per immagine oppure qualsiasi altra cosa per uscire");
-            Scanner input = new Scanner(System.in);
             int scanner = input.nextInt();
             if (scanner == 1){
                 System.out.println("Titolo?");
-                Scanner ins = new Scanner(System.in);
-                String title = ins.next();
+                String title = input.next();
                 System.out.println("Durata?");
-                Scanner time = new Scanner(System.in);
-                int durata = time.nextInt();
+                int durata = input.nextInt();
                 arr[i] = new Video(title, durata);
             } else if (scanner == 2) {
                 System.out.println("Titolo?");
-                Scanner ins = new Scanner(System.in);
-                String title = ins.next();
+                String title = input.next();
                 System.out.println("Durata?");
-                Scanner time = new Scanner(System.in);
-                int durata = time.nextInt();
+                int durata = input.nextInt();
                 arr[i] = new Audio(title, durata);
             } else if (scanner == 3) {
                 System.out.println("Titolo?");
-                Scanner ins = new Scanner(System.in);
-                String title = ins.next();
+                String title = input.next();
                 arr[i] = new Immagine(title);
             }
 
-
-
-
-
         }
+
         boolean loop = true;
         while (loop){
             System.out.println("Cosa vuoi riprodurre? Scegli numeri da 1 a 5 per la selezionare la posizione " +
                     "qualsiasi altro numero terminerà il processo!");
-            Scanner input = new Scanner(System.in);
             int selection = input.nextInt();
             switch (selection){
                 case 1:
@@ -110,7 +101,7 @@ public class Main {
             }}
 
 
-
+        input.close();
 
     }
 }
